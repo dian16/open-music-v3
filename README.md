@@ -1,2 +1,3 @@
-open-music-v1
-aplikasi backend untuk submission 1 dicoding
+open-music-v2
+
+aplikasi backend untuk submission 2 dicoding
