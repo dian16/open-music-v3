@@ -3,27 +3,24 @@
 exports.shorthands = undefined
 
 exports.up = pgm => {
-  pgm.createTable('users', {
+  pgm.createTable('playlists', {
     id: {
       type: 'VARCHAR(60)',
       primaryKey: true
     },
-    username: {
-      type: 'TEXT',
-      unique: true,
-      notNUll: true
-    },
-    password: {
-      type: 'TEXT',
+    name: {
+      type: 'VARCHAR(300)',
       notNull: true
     },
-    fullname: {
+    owner: {
       type: 'TEXT',
       notNull: true
     }
   })
+
+  pgm.addConstraint('playlists', 'fk_playlists.owner_users.id', 'FOREIGN KEY(owner) REFERENCES users(id) ON DELETE CASCADE')
 }
 
 exports.down = pgm => {
-  pgm.dropTable('users')
+  pgm.dropTable('playlists')
 }
