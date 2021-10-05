@@ -5,11 +5,11 @@ const postPlaylistSchema = Joi.object({
 })
 
 const postSongToPlaylistSchema = Joi.object({
-  musicId: Joi.string().required()
+  songId: Joi.string().required()
 })
 
 const deleteSongFromPlaylistSchema = Joi.object({
-  musicId: Joi.string().required()
+  songId: Joi.string().required()
 })
 
 module.exports = { postPlaylistSchema, postSongToPlaylistSchema, deleteSongFromPlaylistSchema }

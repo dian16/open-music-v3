@@ -8,9 +8,9 @@ class playlistsHandler {
     this.postPlaylistHandler = this.postPlaylistHandler.bind(this)
     this.getPlaylistHandler = this.getPlaylistHandler.bind(this)
     this.deletePlaylistHandler = this.deletePlaylistHandler.bind(this)
-    this.postSongPlaylistHandler = this.postSongToPlaylistHandler.bind(this)
-    this.getSongsPlaylistHandler = this.getSongsFromPlaylistHandler.bind(this)
-    this.deleteSongPlaylistHandler = this.deleteSongFromPlaylistHandler.bind(this)
+    this.postSongToPlaylistHandler = this.postSongToPlaylistHandler.bind(this)
+    this.getSongsFromPlaylistHandler = this.getSongsFromPlaylistHandler.bind(this)
+    this.deleteSongFromPlaylistHandler = this.deleteSongFromPlaylistHandler.bind(this)
   }
 
   async postPlaylistHandler (request, h) {
@@ -123,7 +123,7 @@ class playlistsHandler {
       const { id: credentialId } = request.auth.credentials
 
       await this._service.verifyPlaylistAccess(playlistId, credentialId)
-      await this._service.addSongToPlaylist(songId, playlistId)
+      await this._service.addSongToPlaylist(playlistId, songId)
 
       const response = h.response({
         status: 'success',

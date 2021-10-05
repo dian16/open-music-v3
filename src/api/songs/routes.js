@@ -2,42 +2,27 @@ const routes = (handler) => [
   {
     method: 'POST',
     path: '/songs',
-    handler: handler.postSongHandler,
-    options: {
-      auth: 'musicsapp_jwt'
-    }
+    handler: handler.postSongHandler
   },
   {
     method: 'GET',
     path: '/songs',
-    handler: handler.getSongsHandler,
-    options: {
-      auth: 'musicsapp_jwt'
-    }
+    handler: handler.getSongsHandler
   },
   {
     method: 'GET',
     path: '/songs/{songId}',
-    handler: handler.getSongByIdHandler,
-    options: {
-      auth: 'musicsapp_jwt'
-    }
+    handler: handler.getSongByIdHandler
   },
   {
     method: 'PUT',
     path: '/songs/{songId}',
-    handler: handler.putSongByIdHandler,
-    options: {
-      auth: 'musicsapp_jwt'
-    }
+    handler: handler.putSongByIdHandler
   },
   {
     method: 'DELETE',
     path: '/songs/{songId}',
-    handler: handler.deleteSongByIdHandler,
-    options: {
-      auth: 'musicsapp_jwt'
-    }
+    handler: handler.deleteSongByIdHandler
   }
 ]
 
