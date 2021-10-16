@@ -1,5 +1,5 @@
 const redis = require('redis')
-const InvariantError = require('../../exceptions/InvariantError')
+const InvariantError = require('../exceptions/InvariantError')
 
 class CacheService {
   constructor () {

@@ -13,7 +13,7 @@ class ExportsHandler {
     try {
       this._validator.validateExportSongsPayload(request.payload)
 
-      const { playlist: id } = request.params
+      const { playlistId: id } = request.params
       const { id: userId } = request.auth.credentials
 
       await this._playlistsService.verifyPlaylistAccess(id, userId)
