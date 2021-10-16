@@ -1,7 +1,7 @@
 const ClientError = require('../../exceptions/ClientError')
 
 class ExportsHandler {
-  constructor (exportsService, playlistsService, validator) {
+  constructor ({ exportsService, playlistsService, validator }) {
     this._exportsService = exportsService
     this._playlistsService = playlistsService
     this._validator = validator

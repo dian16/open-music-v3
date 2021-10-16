@@ -1,5 +1,3 @@
-/* eslint-disable new-cap */
-/* eslint-disable no-undef */
 const { nanoid } = require('nanoid')
 const { Pool } = require('pg')
 
@@ -106,7 +104,7 @@ class PlaylistsService {
 
   async getSongsInPlaylist (playlistId) {
     const query = {
-      text: `SELECT musics.* FROM musics
+      text: `SELECT musics.id, musics.title, musics.performer FROM musics
                     LEFT JOIN playlistmusics ON musics.id = playlistmusics.music_id
                     WHERE playlistmusics.playlist_id = $1
                     GROUP BY musics.id`,
